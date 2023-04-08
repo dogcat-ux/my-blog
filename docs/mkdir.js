@@ -88,7 +88,7 @@ async function mkdir(sidebarDir, prefix) {
       if (v && v.indexOf(".") === -1) {
         res.push(`* ${v}`);
       } else if (v && v !== ".") {
-        res.push(`* [${v.split(".")[0]}](${cur})`);
+        res.push(`* [${v.split(".")[0]}](${cur.replace("./", "")})`);
       }
     });
     res.forEach((v, index) => {
@@ -104,8 +104,7 @@ async function mkdir(sidebarDir, prefix) {
   console.log("====================================");
   console.log(data);
   console.log("====================================");
-  writeDir("./docs/_sidebar.md", data);
+  writeDir(sidebarDir, data);
   return data;
 }
-// mkdir(sidebarDir, prefix);
-mkdir("./_sidebar.md", "interview").then((data) => {});
+mkdir("./docs/_sidebar.md", "interview").then((data) => {});

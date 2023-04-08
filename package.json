@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "node mkdir.js&&docsify serve",
+    "dir": "node ./docs/mkdir.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "remote":"node ./docs/mkdir.js && git add . && git commit -m 'feat: 更新' && git push origin master"
   },
