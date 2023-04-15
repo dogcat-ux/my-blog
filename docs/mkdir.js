@@ -74,7 +74,7 @@ async function writeDir(pathUrl, data, opt = {}) {
   });
 }
 async function mkdir(sidebarDir, prefix) {
-  const dirArr = await readDirAndMakePath("./docs/docs", "interview");
+  const dirArr = await readDirAndMakePath("./docs/docs", prefix);
   // 生成侧边栏格式
   // * 文件夹名称
   //  * [文章名](文章路径)
@@ -107,4 +107,4 @@ async function mkdir(sidebarDir, prefix) {
   writeDir(sidebarDir, data);
   return data;
 }
-mkdir("./docs/_sidebar.md", "interview").then((data) => {});
+mkdir("./docs/_sidebar.md", "docs").then((data) => {});
